@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        /* Gaya untuk tema dark dan green */
+        body {
+            background-color: #0d1117; /* Background dark */
+            color: #c9d1d9; /* Text light */
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+    
+        /* Jumbotron untuk dark mode */
+        .jumbotron {
+            background-color: #1f232a; /* Warna latar dark */
+            color: #c9d1d9; /* Teks warna light */
+        }
+    
+        /* Card untuk tema dark */
+        .card {
+            background-color: #161b22; /* Dark card */
+            color: #c9d1d9;
+            border: none;
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+        }
+    
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+    
+        /* Gaya untuk Contact Info */
+        .contact-info {
+            background-color: #1f232a; /* Background dark */
+            color: #c9d1d9; /* Text light */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow untuk menonjolkan konten */
+        }
+
+        .contact-info h4 {
+            color: #00ff7f; /* Green heading */
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        .contact-info i {
+            color: #00ff7f; /* Green icon */
+            margin-right: 0.5rem;
+        }
+
+        /* Form kontrol */
+        .form-control {
+            background-color: #161b22; /* Dark input field */
+            color: #c9d1d9;
+            border: 1px solid #00ff7f; /* Green border */
+        }
+
+        .form-control:focus {
+            border-color: #00ff7f;
+            box-shadow: 0 0 0 0.2rem rgba(0, 255, 127, 0.25); /* Green glow */
+        }
+
+        /* Button untuk tema dark dan green */
+        .btn-primary {
+            background-color: #00ff7f; /* Green button */
+            border-color: #00ff7f;
+            color: #0d1117;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #00cc63;
+            border-color: #00cc63;
+            color: #ffffff;
+        }
+    
+        /* Background animasi */
+        #animatedBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(0, 128, 0, 0.4) 10%, transparent 10%),
+                        radial-gradient(circle, rgba(0, 128, 0, 0.4) 10%, transparent 10%);
+            background-size: 10% 10%;
+            animation: moveBackground 20s infinite linear;
+        }
+    
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0, 50% 50%;
+            }
+            100% {
+                background-position: 100% 100%, 150% 150%;
+            }
+        }
+    </style>
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Background animasi -->
+    <div id="animatedBackground"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="container mt-5">
+        <div class="jumbotron text-center text-light">
+            <h1 class="display-4">Hi, I'm Leon</h1>
+            <p class="lead">I'm a passionate developer and this is my portfolio.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">See My Work</a>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="container mt-5">
+        <h2 class="text-light">My Projects</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="project-image-1.jpg" class="card-img-top" alt="Project 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 1</h5>
+                        <p class="card-text">Description of the project.</p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project1Modal">View Project 1</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="project-image-2.jpg" class="card-img-top" alt="Project 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 2</h5>
+                        <p class="card-text">Description of the project.</p>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project2Modal">View Project 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Project 1 -->
+    <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project1ModalLabel">Project 1</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Deskripsi lengkap tentang Project 1 beserta fitur-fiturnya.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#" class="btn btn-primary">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Project 2 -->
+    <div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project2ModalLabel">Project 2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Deskripsi lengkap tentang Project 2 beserta fitur-fiturnya.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#" class="btn btn-primary">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Form Section -->
+    <div class="container mt-5">
+        <h2 class="text-light">Contact Me</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h4>Get in Touch</h4>
+                    <p><i class="bi bi-envelope"></i> email@example.com</p>
+                    <p><i class="bi bi-telephone"></i> +123 456 7890</p>
+                    <p><i class="bi bi-geo-alt"></i> Your Location</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="container mt-5">
+        <div class="container p-4">
+            <p>&copy; 2024 Your Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+</body>
+</html>
