@@ -1,6 +1,6 @@
 # Protofolio-Simple 
 
-Project ini sudah saya kembangkan dalam waktu singkat mungkin sekitar 1 hari, karena saya sibuk dengan pekerjaan saya tapi tenang aja saya akan tetep me improve nya agar lebih baik kedepanya, berikut ini adalah fitur, progres dan yang saya kerjakan selajutnya:
+Project ini sudah saya kembangkan dalam waktu singkat mungkin sekitar 1 hari, karena saya sibuk dengan pekerjaan saya tapi tenang aja saya akan tetep me improve nya agar lebih baik kedepanya, berikut ini adalah fitur, progres dan yang saya kerjakan selajutnya.
 
 # ⚙️Fitur Utama:
 Navbar Responsif:
